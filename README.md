@@ -1,6 +1,7 @@
 # Bitácora
-
-#Instalar
+##Objetivo  
+El proyecto consiste en configurar un cluster de raspberry pis para compilación en paralelo 
+##Instalar
 Cliente:  
 nfs-common  
 gcc/gfortran  
@@ -13,9 +14,9 @@ nfs-kernel-server
 gcc/gfortran  
 ssh  
 rpcbind  
-descargar mpich  
+descargar mpich3.tar.gz   
 
-#Configurar Red
+##Configurar Red
 Modificar archivos de configuración  
 ```
 /etc/network/interfaces
@@ -23,7 +24,7 @@ Modificar archivos de configuración
 /etc/hostname
 ```
 
-#Configurar NFS
+##Configurar NFS
 Servidor: Agregar en  
 `/etc/exports`
 
@@ -33,7 +34,7 @@ Cliente: Agregar en `/etc/fstab`
 
 `IP_Serv:/home/pi /home/pi nfs defaults 00`
 
-#Reiniciar servicios
+##Reiniciar servicios
 Servidor:  
 ```
 rpcbind
@@ -45,14 +46,14 @@ Clientes:
 rpcbind
 nfs-common
 ```
-#Configurar ssh
+##Configurar ssh
 Servidor y Cliente  
 ```
 ssh_keygen -t rsa -C "pi@raspberry"
 cat /home/pi/.ssh/id_rsa.pub>>/home/pi/.ssh/authorized_keys
 ```
 
-#Instalar mpich
+##Instalar mpich
 `tar -xzvf mpich`
 `./configure`
 `make`

@@ -1,14 +1,14 @@
 # Bitácora
 
 #Instalar
-Cliente  
+Cliente:  
 nfs-common  
 gcc/gfortran  
 ssh  
 rpcbind  
 descargar mpich3.tar.gz  
 
-Servidor:
+Servidor:  
 nfs-kernel-server  
 gcc/gfortran  
 ssh  
@@ -16,7 +16,7 @@ rpcbind
 descargar mpich  
 
 #Configurar Red
-Modificar archivos de configuración
+Modificar archivos de configuración  
 ```
 /etc/network/interfaces
 /etc/hosts
@@ -24,7 +24,7 @@ Modificar archivos de configuración
 ```
 
 #Configurar NFS
-Servidor: Agregar en 
+Servidor: Agregar en  
 `/etc/exports`
 
 `/home/pi red/24(rw, no_subtree_check)`
@@ -34,19 +34,19 @@ Cliente: Agregar en `/etc/fstab`
 `IP_Serv:/home/pi /home/pi nfs defaults 00`
 
 #Reiniciar servicios
-Servidor:
+Servidor:  
 ```
 rpcbind
 nfs-kernel-server
 ```
 
-Clientes:
+Clientes:  
 ```
 rpcbind
 nfs-common
 ```
 #Configurar ssh
-Servidor y Cliente
+Servidor y Cliente  
 ```
 ssh_keygen -t rsa -C "pi@raspberry"
 cat /home/pi/.ssh/id_rsa.pub>>/home/pi/.ssh/authorized_keys

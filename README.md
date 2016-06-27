@@ -1,6 +1,11 @@
 # Bitácora
 ##Objetivo  
 El proyecto consiste en configurar un cluster de raspberry pis para compilación en paralelo 
+##Configuración Red
+Para el proyecto se configuró una red con ips estáticas para el servidor y para los clientes junto con un switch de DLink como base en topología de estrella:  
+Servidor: 192.168.169.101  
+Cliente1: 192.168.169.102  
+Cliente2: 192.168.169.103  
 ##Instalar
 Cliente:  
 nfs-common  

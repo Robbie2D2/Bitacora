@@ -3,9 +3,9 @@
 El proyecto consiste en configurar un cluster de raspberry pis para compilación en paralelo 
 ##Configuración Red
 Para el proyecto se configuró una red con ips estáticas para el servidor y para los clientes junto con un switch de DLink como base en topología de estrella:  
-Servidor: 192.168.169.101  
-Cliente1: 192.168.169.102  
-Cliente2: 192.168.169.103  
+Servidor: 192.168.169.101/24  
+Cliente1: 192.168.169.102/24  
+Cliente2: 192.168.169.103/24  
 ##Instalar
 Cliente:  
 nfs-common  
@@ -33,11 +33,11 @@ Modificar archivos de configuración
 Servidor: Agregar en  
 `/etc/exports`
 
-`/home/pi red/24(rw, no_subtree_check)`
+`/home/pi 192.168.169.101/24(rw, no_subtree_check)`
 
 Cliente: Agregar en `/etc/fstab`
 
-`IP_Serv:/home/pi /home/pi nfs defaults 00`
+`192.168.169.101:/home/pi /home/pi nfs defaults 00`
 
 ##Reiniciar servicios
 Servidor:  

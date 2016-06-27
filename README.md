@@ -1,19 +1,19 @@
 # Bitácora
 
 #Instalar
-Cliente
-nfs-common
-gcc/gfortran
-ssh
-rpcbind
-descargar mpich3.tar.gz
+Cliente  
+nfs-common  
+gcc/gfortran  
+ssh  
+rpcbind  
+descargar mpich3.tar.gz  
 
 Servidor:
-nfs-kernel-server
-gcc/gfortran
-ssh
-rpcbind
-descargar mpich
+nfs-kernel-server  
+gcc/gfortran  
+ssh  
+rpcbind  
+descargar mpich  
 
 #Configurar Red
 Modificar archivos de configuración

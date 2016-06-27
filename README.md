@@ -66,3 +66,53 @@ make
 sudo make install
 export PATH=$PATH:ruta/bin
 ```
+
+### Servidor 1
+
+Se comenzó con la instalación de los paquetes:
+
+```
+aptitude install gcc
+aptitude search rcpbind
+aptitude search nfs
+```
+
+Después la descarga de mpich:
+
+```
+wget http://www.mpich.org/static/downloads/3.2/mpich-3.2.tar.gz
+```
+
+La configuracion de la red fue la siguiente:
+
+```
+vim /etc/network/interfaces
+```
+
+```
+auto eth0
+iface eth0 inet static
+address 192.168.169.102
+netmask 255.255.255.0
+gateway 192.168.169.1
+```
+
+Después nos encargamos de configurar el archivo hosts:
+
+```
+vim /etc/hosts
+```
+
+```
+192.168.169.1 carlos
+192.168.169.2 jesus
+192.168.169.3 cliente
+```
+
+Para la configuración del NFS se agrego la siguiente línea a `/etc/fstab`
+
+```
+192.168.169.101:/home/pi /home/pi nfs    defaults  0       0
+```
+
+Cuando estuvo listo el servicio de NFS se agregó al Path, la ruta de mpich del servidor, pues ya estaba compilado e instalado en su home

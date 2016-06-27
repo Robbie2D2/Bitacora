@@ -54,8 +54,10 @@ cat /home/pi/.ssh/id_rsa.pub>>/home/pi/.ssh/authorized_keys
 ```
 
 ##Instalar mpich
-`tar -xzvf mpich`
-`./configure`
-`make`
-`sudo make install`
-`export PATH=$PATH:ruta/bin`
+```
+tar -xzvf mpich
+./configure
+make
+sudo make install
+export PATH=$PATH:ruta/bin
+```
